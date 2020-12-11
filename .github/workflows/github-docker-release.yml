@@ -42,12 +42,12 @@ jobs:
 
       - name: "⚡ Setup DockerFile"
         run: |
-          echo " " >> ./${{matrix.dockerinfo.file}}
-          echo "LABEL org.opencontainers.image.source=\"https://github.com/${GITHUB_REPOSITORY}/\"" >> ./${{matrix.dockerinfo.file}}
-          echo "LABEL org.opencontainers.image.url=\"https://github.com/${GITHUB_REPOSITORY}/\"" >> ./${{matrix.dockerinfo.file}}
-          echo "LABEL org.opencontainers.image.documentation=\"https://github.com/${GITHUB_REPOSITORY}/\"" >> ./${{matrix.dockerinfo.file}}
-          echo "LABEL org.opencontainers.image.vendor=\"Personal Docker Images\"" >> ./${{matrix.dockerinfo.file}}
-          cat ./${{matrix.dockerinfo.file}}
+          echo " " >> ./images/${{matrix.dockerinfo.file}}
+          echo "LABEL org.opencontainers.image.source=\"https://github.com/${GITHUB_REPOSITORY}/\"" >> ./images/${{matrix.dockerinfo.file}}
+          echo "LABEL org.opencontainers.image.url=\"https://github.com/${GITHUB_REPOSITORY}/\"" >> ./images/${{matrix.dockerinfo.file}}
+          echo "LABEL org.opencontainers.image.documentation=\"https://github.com/${GITHUB_REPOSITORY}/\"" >> ./images/${{matrix.dockerinfo.file}}
+          echo "LABEL org.opencontainers.image.vendor=\"Personal Docker Images\"" >> ./images/${{matrix.dockerinfo.file}}
+          cat ./images/${{matrix.dockerinfo.file}}
       - name: "⚡ Docker QEMU"
         uses: docker/setup-qemu-action@master
 
@@ -64,7 +64,7 @@ jobs:
       - name: "🎉  Build &  🚀  Publish"
         uses: docker/build-push-action@master
         with:
-          file: ./${{ matrix.dockerinfo.file }}
+          file: ./images/${{ matrix.dockerinfo.file }}
           push: true
           tags: |
             ghcr.io/${{ env.REPOSITORY_OWNER }}/${{ matrix.dockerinfo.name }}
