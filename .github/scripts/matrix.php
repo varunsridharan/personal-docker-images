@@ -7,6 +7,11 @@ foreach ( $paths as $path ) {
 	if ( in_array( $image_version, array( 'README.md' ), true ) ) {
 		continue;
 	}
+	
+	if(is_dir($path)){
+		continue;
+	}
+	
 	$return[]      = array(
 		'name' => 'personal-docker-images:' . $image_name,
 		'file' => $image_name . '/' . $image_version,
