@@ -6,5 +6,5 @@ RUN apk add nano
 
 RUN apk add mariadb-client
 
-COPY ./scripts/ /scripts/
+COPY scripts/ /scripts/
 
