@@ -2,7 +2,7 @@ FROM alpine:latest
 
 RUN apk add bash
 
-COPY images/alpine-sefhosted-backup/scripts/ /scripts/
+COPY images/alpine-call-recording-organizer/scripts/ /scripts/
 
 RUN chmod -R 755  /scripts/
 
