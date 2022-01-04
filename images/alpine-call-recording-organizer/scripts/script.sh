@@ -48,7 +48,7 @@ for entry in "${RAW_SOURCE}"/*; do
 	if [ ! -d $entry ]; then
 	  handle_file "$entry"
   elif [ -d $entry ]; then
-    for sub_entry in "${RAW_SOURCE}/${entry}"/*; do
+    for sub_entry in "${entry}"/*; do
       handle_file "$sub_entry"
     done
 	fi
