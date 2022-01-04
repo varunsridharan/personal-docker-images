@@ -8,4 +8,4 @@ RUN chmod -R 755  /scripts/
 
 RUN /usr/bin/crontab /scripts/crontab.txt
 
-CMD ["/entry.sh"]
+CMD ["/scripts/entry.sh"]
