@@ -1,1 +1,1 @@
-*/30 * * * * /scripts/script.sh >> /scripts/run.log
+*/30 * * * * bash /scripts/script.sh >> /scripts/run.log
