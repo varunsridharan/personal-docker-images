@@ -11,6 +11,7 @@ handle_file(){
   FILE_EXT="${FILE_NAME_ARR[1]}"
 
   if [ "aac" == "$FILE_EXT" ]; then
+    echo "Processing : ${FILE}"
     FILE_CONTACT_TIME=($(echo "${FILE_NAME_ARR[0]}" | tr "-" "\n"))
     FETCH_CONTACT_NAME_NUMBER="${FILE_CONTACT_TIME[0]}"
     FILTER_NAME=($(echo "${FETCH_CONTACT_NAME_NUMBER}" | tr "+" "\n"))
@@ -29,7 +30,7 @@ handle_file(){
     fi
 
     cp $FILE "$PROCESSED_SOURCE/$CONTACT_NAME/$CALL_CUSTOM_DATE/$CALL_HOUR.$CALL_MINUTE.$CALL_SECOND.aac"
-    cp $FILE "$RAW_DEST/$FILE_BASE_NAME"
+    mv $FILE "$RAW_DEST/$FILE_BASE_NAME"
   fi
 }
 
@@ -45,11 +46,9 @@ echo "RAW Dest : ${RAW_DEST}"
 echo " "
 for entry in "${RAW_SOURCE}"/*; do
 	if [ ! -d $entry ]; then
-	  echo "Processing : ${entry}"
 	  handle_file "$entry"
   elif [ -d $entry ]; then
     for sub_entry in "${RAW_SOURCE}/${entry}"/*; do
-      echo "Processing : ${sub_entry}"
       handle_file "$sub_entry"
     done
 	fi
@@ -60,3 +59,4 @@ echo "END TIME : $(date)"
 echo "========================================================"
 echo " "
 echo " "
+
