@@ -12,5 +12,3 @@ RUN echo "Asia/Kolkata" >  /etc/timezone
 
 # Remove Unwanted Libs
 RUN apk del tzdata
-
-ENTRYPOINT ["/init"]
