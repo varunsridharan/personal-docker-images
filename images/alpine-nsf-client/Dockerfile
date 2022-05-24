@@ -17,7 +17,9 @@ RUN echo "Asia/Kolkata" >  /etc/timezone
 RUN apk del tzdata
 
 # Setup Instance
-ADD  images/alpine-nsf-client/scripts/nfs-mount.sh /scripts/nfs-mount.sh
+#ADD  images/alpine-nsf-client/scripts/nfs-mount.sh /scripts/nfs-mount.sh
+COPY images/alpine-nsf-client/scripts/ /scripts/
+RUN chmod -R 755  /scripts/
 
 #CMD ["/bin/bash /scripts/nfs-mount.sh"]
 ENTRYPOINT ["/bin/sh","/bin/bash","/scripts/nfs-mount.sh"]
