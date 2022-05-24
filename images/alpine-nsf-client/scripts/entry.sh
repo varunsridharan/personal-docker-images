@@ -1,3 +1,5 @@
 #!/bin/sh
 
-/bin/bash /scripts/nfs-mount.sh
+set -e
+
+bash /scripts/nfs-mount.sh
