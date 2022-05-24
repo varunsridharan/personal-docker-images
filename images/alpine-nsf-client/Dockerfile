@@ -25,5 +25,5 @@ RUN chmod -R 755  /scripts/
 RUN chmod ugo+rx /scripts/nfs-mount.sh
 RUN chmod ugo+rx /scripts/entry.sh
 
-CMD ["/scripts/entry.sh"]
-ENTRYPOINT ["/init"]
+CMD ["/bin/sh /scripts/entry.sh"]
+ENTRYPOINT ["/bin/sh"]
