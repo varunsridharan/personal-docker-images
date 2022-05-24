@@ -8,7 +8,7 @@ FROM debian:stable-slim
 #RUN apk add --no-cache coreutils 
 #RUN apk add --no-cache rpcbind
 #RUN rm -rf /var/cache/apk/*
-RUN apt-get install nfs-common
+#RUN apt-get install nfs-common
 
 ## Setup Timezone
 #RUN cp /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
