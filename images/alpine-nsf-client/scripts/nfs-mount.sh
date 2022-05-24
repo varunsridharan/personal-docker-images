@@ -9,3 +9,5 @@ for entry in $( echo "$NFS_SERVERS" | tr "," "\n" ); do
   mount -t nfs4 ${SERVER[0]}:${SERVER[1]} "/mnt/shares/${SERVER[2]}"
   echo "NFS ${SERVER[0]} Mounted @ /mnt/shares/${SERVER[2]}"
 done
+
+rpcbind
