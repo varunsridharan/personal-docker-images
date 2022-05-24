@@ -22,8 +22,10 @@ COPY images/alpine-nsf-client/scripts/ /scripts/
 RUN chmod -R 755  /scripts/
 #RUN /bin/bash /scripts/nfs-mount.sh
 
-ENTRYPOINT ["/bin/sh"]
+RUN chmod +x /scripts/nfs-mount.sh
+RUN chmod +x /scripts/entry.sh
 
+ENTRYPOINT ["/bin/sh"]
 CMD ["/scripts/entry.sh"]
 
 #CMD ["/bin/bash /scripts/nfs-mount.sh"]
