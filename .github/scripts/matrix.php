@@ -13,7 +13,7 @@ foreach ( $paths as $path ) {
 	}
 	
 	$return[]      = array(
-		'name' => 'personal-docker-images:' . $image_name,
+		'name' => $image_name ,
 		'file' => $image_name . '/' . $image_version,
 	);
 }
