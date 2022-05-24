@@ -1,6 +1,5 @@
 #!/bin/sh
 
-set -e
+set -m
 
-touch /root/log.log
-echo "$(bash /scripts/nfs-mount.sh)" >> /root/log.log
+bash /scripts/nfs-mount.sh
