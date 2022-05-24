@@ -18,4 +18,6 @@ RUN apk del tzdata
 # Setup Instance
 COPY images/alpine-nsf-client/scripts/ /scripts/
 RUN chmod -R 755  /scripts/
-ENTRYPOINT ["/scripts/nfs-mount.sh","/init"]
+CMD ["/scripts/nfs-mount.sh"]
+
+ENTRYPOINT ["/init"]
