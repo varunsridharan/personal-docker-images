@@ -1,6 +1,7 @@
 FROM alpine:latest
 
 # Install Required Libs
+RUN apk --no-cache --update upgrade
 RUN apk add --no-cache bash
 RUN apk add --no-cache tzdata 
 RUN apk add --no-cache nfs-utils
@@ -16,6 +17,7 @@ RUN echo "Asia/Kolkata" >  /etc/timezone
 RUN apk del tzdata
 
 # Setup Instance
-COPY images/alpine-nsf-client/scripts/nfs-mount.sh /etc/cont-init.d/10_nfs-mount.sh
+COPY images/alpine-nsf-client/scripts/nfs-mount.sh /scripts/nfs-mount.sh
 
+CMD ["bash /scripts/nfs-mount.sh"]
 ENTRYPOINT ["/init"]
