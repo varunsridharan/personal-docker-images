@@ -3,7 +3,7 @@
 rpcbind
 
 for entry in $( echo "$NFS_SERVERS" | tr "," "\n" ); do
-  SERVER=$(echo "$entry" | tr ":" "\n")
+  SERVER=($(echo "$entry" | tr ":" "\n"))
 
   if [ ! -d "$entry" ]; then
     mkdir -p "/mnt/shares/${SERVER[2]}"
