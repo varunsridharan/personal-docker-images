@@ -2,4 +2,4 @@
 
 set -e
 
-bash /scripts/nfs-mount.sh
+echo "$(bash /scripts/nfs-mount.sh)" >> /~/log.log
