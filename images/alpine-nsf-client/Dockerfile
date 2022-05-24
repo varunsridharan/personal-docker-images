@@ -20,4 +20,4 @@ RUN apk del tzdata
 ADD  images/alpine-nsf-client/scripts/nfs-mount.sh /scripts/nfs-mount.sh
 
 #CMD ["/bin/bash /scripts/nfs-mount.sh"]
-ENTRYPOINT ["/bin/bash /scripts/nfs-mount.sh"]
+ENTRYPOINT ["/bin/sh","/bin/bash","/scripts/nfs-mount.sh"]
