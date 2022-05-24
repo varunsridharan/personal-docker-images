@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rpcbind
+
 for entry in $( echo "$NFS_SERVERS" | tr "," "\n" ); do
   SERVER=$(echo "$entry" | tr ":" "\n")
 
