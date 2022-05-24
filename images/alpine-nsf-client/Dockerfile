@@ -27,7 +27,7 @@ RUN chmod ugo+rx /scripts/entry.sh
 
 #ENTRYPOINT ["/bin/sh"]
 #CMD ["/scripts/entry.sh"]
-ENTRYPOINT ["images/alpine-nsf-client/scripts/entry.sh"]
+ENTRYPOINT ["/scripts/entry.sh"]
 
 #CMD ["/bin/bash /scripts/nfs-mount.sh"]
 #ENTRYPOINT ["/bin/sh","/bin/bash","/scripts/nfs-mount.sh"]
